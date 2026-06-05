@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy | Cancer Funding</title>
+<meta name="description" content="Privacy Policy for CancerFunding.net — how we collect, use, and protect your personal information." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   DESIGN TOKENS (exact match to main site)
+   ========================================================= */
+:root{
+  --green-900:#0f3d2e;
+  --green-800:#13523d;
+  --green-700:#1a6b4f;
+  --green-600:#1f8460;
+  --green-500:#2aa373;
+  --green-400:#5bc093;
+  --green-100:#e8f5ee;
+  --green-50:#f3faf6;
+  --ink-900:#0b1513;
+  --ink-700:#2a3a35;
+  --ink-500:#5a6a64;
+  --ink-400:#8a9893;
+  --ink-200:#dde3e0;
+  --ink-100:#eef2f0;
+  --bg:#ffffff;
+  --bg-soft:#fafbf9;
+  --gold:#c9a45a;
+  --radius-sm:10px;
+  --radius:14px;
+  --radius-lg:22px;
+  --radius-xl:28px;
+  --shadow-sm:0 1px 2px rgba(15,61,46,.06);
+  --shadow:0 10px 30px -12px rgba(15,61,46,.18), 0 2px 6px rgba(15,61,46,.06);
+  --shadow-lg:0 30px 60px -20px rgba(15,61,46,.25);
+  --container:1200px;
+  --gutter:24px;
+  --font-display:"Fraunces", Georgia, serif;
+  --font-body:"Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* =========================================================
+   RESET & BASE
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink-900);
+  background:var(--bg);
+  line-height:1.55;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;letter-spacing:-.02em;line-height:1.1;color:var(--ink-900);margin:0}
+h1{font-size:clamp(2.2rem,4.6vw,3.8rem)}
+h2{font-size:clamp(1.8rem,3.2vw,2.6rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 1em}
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+
+/* Eyebrow pill */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 12px;border-radius:999px;
+  background:var(--green-100);color:var(--green-800);
+  font-size:.8rem;font-weight:600;letter-spacing:.02em;
+  border:1px solid rgba(26,107,79,.15);
+}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green-600);box-shadow:0 0 0 4px rgba(42,163,115,.18)}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:14px 22px;border-radius:999px;
+  font-weight:600;font-size:1rem;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  white-space:nowrap;
+}
+.btn-primary{background:var(--green-800);color:#fff;box-shadow:var(--shadow)}
+.btn-primary:hover{background:var(--green-700);transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+.btn-ghost{background:transparent;color:var(--ink-900);border:1px solid var(--ink-200)}
+.btn-ghost:hover{border-color:var(--green-600);color:var(--green-800)}
+
+/* =========================================================
+   HEADER / NAV (exact match)
+   ========================================================= */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--ink-100);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{display:flex;align-items:center;flex-shrink:0}
+.logo-mark{
+  width:36px;height:36px;border-radius:10px;
+  background:var(--green-800);display:grid;place-items:center;
+  color:#fff;margin-right:10px;flex-shrink:0;
+}
+.logo-mark svg{width:18px;height:18px}
+.logo-text{font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--ink-900)}
+.logo-text b{color:var(--green-800)}
+.logo-text span{color:var(--ink-500);font-weight:400}
+
+.nav-links{display:flex;gap:20px;align-items:center;white-space:nowrap}
+.nav-links a{font-size:.88rem;color:var(--ink-700);font-weight:500;position:relative;white-space:nowrap}
+.nav-links a:hover{color:var(--green-800)}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--green-600);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.nav-links a:hover::after{transform:scaleX(1)}
+
+.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-phone{display:flex;align-items:center;gap:6px;font-size:.88rem;font-weight:600;color:var(--green-800);white-space:nowrap;text-decoration:none;border-left:1px solid var(--ink-200);padding-left:14px;margin-left:2px}
+.nav-phone:hover{color:var(--green-600)}
+@media(max-width:1100px){.nav-phone{display:none}}
+.burger{display:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--ink-200)}
+@media(max-width:1100px){
+  .nav-links{display:none}
+  .burger{display:grid;place-items:center}
+  .nav-cta .btn-ghost{display:none}
+}
+
+/* =========================================================
+   PAGE HERO (policy banner)
+   ========================================================= */
+.policy-hero{
+  padding:72px 0 56px;
+  background:
+    radial-gradient(1200px 400px at 85% -10%, rgba(42,163,115,.08), transparent 60%),
+    radial-gradient(700px 300px at -10% 50%, rgba(42,163,115,.05), transparent 60%),
+    #fff;
+  border-bottom:1px solid var(--ink-100);
+}
+.policy-hero-inner{max-width:760px}
+.policy-hero .eyebrow{margin-bottom:20px}
+.policy-hero h1{margin-bottom:16px}
+.policy-hero h1 em{font-style:italic;color:var(--green-700);font-weight:500}
+.policy-meta{font-size:.9rem;color:var(--ink-500);display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.policy-meta span{display:inline-flex;align-items:center;gap:6px}
+.policy-meta svg{width:14px;height:14px;color:var(--green-600)}
+
+/* =========================================================
+   POLICY LAYOUT
+   ========================================================= */
+.policy-wrap{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:48px;
+  padding:56px 0 96px;
+  align-items:start;
+}
+@media(max-width:900px){.policy-wrap{grid-template-columns:1fr;gap:32px}}
+
+/* ── Sticky TOC sidebar ── */
+.policy-toc{
+  position:sticky;
+  top:88px;
+}
+.toc-label{
+  font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-400);margin-bottom:14px;
+}
+.toc-list{list-style:none;padding:0;margin:0}
+.toc-list li{margin-bottom:2px}
+.toc-list a{
+  display:block;padding:7px 12px;border-radius:8px;
+  font-size:.88rem;color:var(--ink-500);font-weight:500;
+  transition:all .15s ease;
+  border-left:2px solid transparent;
+}
+.toc-list a:hover{
+  color:var(--green-800);
+  background:var(--green-50);
+  border-left-color:var(--green-600);
+}
+@media(max-width:900px){.policy-toc{display:none}}
+
+/* ── Content column ── */
+.policy-content{}
+
+/* Section */
+.pol-section{
+  margin-bottom:48px;
+  scroll-margin-top:88px;
+}
+.pol-section-head{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:20px;
+  padding-bottom:16px;
+  border-bottom:1px solid var(--ink-100);
+}
+.pol-num{
+  width:32px;height:32px;border-radius:50%;flex-shrink:0;
+  background:var(--green-800);color:#fff;
+  display:grid;place-items:center;
+  font-size:.75rem;font-weight:700;
+  font-family:var(--font-body);
+}
+.pol-section h2{
+  font-size:1.25rem;
+  font-weight:600;
+  color:var(--ink-900);
+}
+.pol-section p{
+  font-size:.97rem;
+  color:var(--ink-700);
+  line-height:1.72;
+  margin-bottom:14px;
+}
+.pol-section p:last-child{margin-bottom:0}
+.pol-section ul{
+  list-style:none;padding:0;margin:0 0 16px;
+  display:flex;flex-direction:column;gap:8px;
+}
+.pol-section ul li{
+  font-size:.97rem;color:var(--ink-700);line-height:1.65;
+  display:flex;gap:10px;align-items:flex-start;
+}
+.pol-section ul li::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--green-600);flex-shrink:0;margin-top:.55em;
+}
+.pol-section a{color:var(--green-700);text-underline-offset:3px}
+.pol-section a:hover{color:var(--green-600)}
+
+/* Callout */
+.pol-callout{
+  background:var(--green-50);border:1px solid rgba(26,107,79,.15);
+  border-left:3px solid var(--green-600);
+  border-radius:var(--radius);
+  padding:18px 20px;
+  margin:20px 0;
+}
+.pol-callout p{font-size:.93rem;margin:0;color:var(--ink-700)}
+.pol-callout strong{color:var(--green-800)}
+
+/* =========================================================
+   CONTACT CARD
+   ========================================================= */
+.contact-card{
+  background:var(--green-900);color:#fff;
+  border-radius:var(--radius-xl);
+  padding:40px;
+  margin-top:40px;
+  position:relative;overflow:hidden;
+}
+.contact-card::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(600px 300px at 110% 120%, rgba(42,163,115,.25), transparent 60%);
+}
+.contact-card .container{position:relative}
+.contact-card h3{
+  font-family:var(--font-display);
+  font-size:1.4rem;font-weight:500;
+  color:#fff;margin-bottom:6px;
+}
+.contact-card p{font-size:.95rem;color:rgba(255,255,255,.75);margin-bottom:6px}
+.contact-card a{color:var(--green-400)}
+.contact-card a:hover{color:#fff}
+.contact-card-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px}
+.contact-item{display:flex;align-items:center;gap:10px;font-size:.92rem;color:rgba(255,255,255,.8)}
+.contact-item svg{width:16px;height:16px;color:var(--green-400);flex-shrink:0}
+
+/* =========================================================
+   FOOTER (exact match)
+   ========================================================= */
+.site-footer{background:#0a1f18;color:rgba(255,255,255,.7);padding:72px 0 24px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08)}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}.foot-brand{grid-column:1/-1}}
+@media(max-width:540px){.foot-grid{grid-template-columns:1fr}}
+
+.foot-brand .logo{color:#fff;margin-bottom:16px}
+.foot-brand .logo-text{color:#fff}
+.foot-brand .logo-text b{color:var(--green-400)}
+.foot-brand .logo-text span{color:rgba(255,255,255,.6)}
+.foot-brand p{max-width:340px;font-size:.92rem;line-height:1.6;margin-bottom:20px}
+.socials{display:flex;gap:10px;flex-wrap:wrap}
+.socials a{
+  width:38px;height:38px;border-radius:10px;
+  background:rgba(255,255,255,.06);display:grid;place-items:center;
+  transition:all .2s ease;border:1px solid rgba(255,255,255,.08);
+}
+.socials a:hover{background:var(--green-600);border-color:var(--green-600);transform:translateY(-2px)}
+.socials a svg{width:16px;height:16px;color:#fff}
+
+.foot-col h4{font-family:var(--font-body);color:#fff;font-size:.95rem;font-weight:600;margin-bottom:16px;letter-spacing:.02em}
+.foot-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.foot-col a{font-size:.92rem;color:rgba(255,255,255,.65);transition:color .15s ease}
+.foot-col a:hover{color:var(--green-400)}
+.foot-contact{display:flex;align-items:center;gap:8px;font-size:.92rem;margin-bottom:8px}
+.foot-contact svg{width:14px;height:14px;color:var(--green-400)}
+
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;flex-wrap:wrap;gap:16px;font-size:.85rem}
+.foot-legal{display:flex;gap:24px}
+.foot-legal a:hover{color:var(--green-400)}
+.disclaimer{
+  font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.6;
+  padding:20px 0;border-top:1px solid rgba(255,255,255,.06);margin-top:16px;
+}
+</style>
+</head>
+<body>
+
+<!-- ================================================
+     HEADER
+================================================= -->
+<header class="site-header">
+  <div class="container nav">
+    <a href="#" class="logo" aria-label="Cancer Funding home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"/></svg>
+      </span>
+      <div class="logo-text"><b>cancer</b><span>funding</span></div>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#how">How it Works</a>
+      <a href="#who-we-are">Who We Are</a>
+      <a href="#blog">Blog</a>
+      <a href="#library">Library</a>
+      <a href="#faq-page">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+18005551234" class="btn btn-ghost">Talk to an Expert</a>
+      <a href="#qualify" class="btn btn-primary">Check Eligibility</a>
+      <a href="tel:+18005551234" class="nav-phone" aria-label="Call us">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        1-800-555-1234
+      </a>
+      <button class="burger" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================================================
+     PAGE HERO
+================================================= -->
+<section class="policy-hero">
+  <div class="container">
+    <div class="policy-hero-inner">
+      <span class="eyebrow">Legal &amp; Compliance</span>
+      <h1>Privacy <em>Policy</em></h1>
+      <div class="policy-meta">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Effective Date: June 1, 2025
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Last Updated: June 1, 2025
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     POLICY BODY
+================================================= -->
+<div class="container">
+  <div class="policy-wrap">
+
+    <!-- Sticky Sidebar TOC -->
+    <aside class="policy-toc" aria-label="Table of contents">
+      <p class="toc-label">On this page</p>
+      <ul class="toc-list">
+        <li><a href="#s1">Who We Are</a></li>
+        <li><a href="#s2">Information We Collect</a></li>
+        <li><a href="#s3">How We Use It</a></li>
+        <li><a href="#s4">How We Share It</a></li>
+        <li><a href="#s5">Cookies &amp; Tracking</a></li>
+        <li><a href="#s6">Data Retention</a></li>
+        <li><a href="#s7">Security</a></li>
+        <li><a href="#s8">Your Rights</a></li>
+        <li><a href="#s9">Children's Privacy</a></li>
+        <li><a href="#s10">Third-Party Links</a></li>
+        <li><a href="#s11">Policy Changes</a></li>
+        <li><a href="#s12">Contact Us</a></li>
+      </ul>
+    </aside>
+
+    <!-- Content -->
+    <div class="policy-content">
+
+      <div class="pol-callout">
+        <p><strong>Your privacy matters.</strong> CancerFunding.net is committed to protecting your personal information. This policy explains what we collect, how we use it, and your rights — please read it before submitting any information.</p>
+      </div>
+
+      <!-- 1 -->
+      <div class="pol-section" id="s1">
+        <div class="pol-section-head">
+          <span class="pol-num">1</span>
+          <h2>Who We Are</h2>
+        </div>
+        <p>CancerFunding.net is a website that helps individuals with life-threatening or chronic illnesses — including cancer — explore the option of selling their life insurance policy for a lump-sum cash payment through a process known as a life or viatical settlement.</p>
+        <p>This Privacy Policy governs the collection and use of personal information submitted through CancerFunding.net and any related communications with our team.</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="pol-section" id="s2">
+        <div class="pol-section-head">
+          <span class="pol-num">2</span>
+          <h2>Information We Collect</h2>
+        </div>
+        <p>We collect information you provide directly, as well as information gathered automatically when you use our site.</p>
+        <p><strong>Information you provide:</strong></p>
+        <ul>
+          <li>Full name, email address, and phone number</li>
+          <li>Health and medical information (diagnosis, age, life expectancy) when voluntarily provided</li>
+          <li>Life insurance policy details (carrier, face value, policy type)</li>
+          <li>Contact preferences and any other details submitted through our forms or questionnaires</li>
+        </ul>
+        <p><strong>Information collected automatically:</strong></p>
+        <ul>
+          <li>IP address and general geographic location</li>
+          <li>Browser type, device type, and operating system</li>
+          <li>Pages visited, time spent on site, and referring URLs</li>
+          <li>Cookie data and similar tracking technologies (see Section 5)</li>
+        </ul>
+      </div>
+
+      <!-- 3 -->
+      <div class="pol-section" id="s3">
+        <div class="pol-section-head">
+          <span class="pol-num">3</span>
+          <h2>How We Use Your Information</h2>
+        </div>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Evaluate your eligibility for a life or viatical settlement</li>
+          <li>Contact you regarding your inquiry via phone, email, or text</li>
+          <li>Connect you with licensed settlement providers or brokers</li>
+          <li>Improve our website content, user experience, and marketing</li>
+          <li>Comply with applicable legal and regulatory requirements</li>
+          <li>Prevent fraud and protect the security of our services</li>
+        </ul>
+        <div class="pol-callout">
+          <p><strong>Sensitive health information:</strong> Any health or medical information you provide is used solely to determine eligibility and facilitate the settlement process. We do not sell your health information to data brokers or use it for unrelated marketing purposes.</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="pol-section" id="s4">
+        <div class="pol-section-head">
+          <span class="pol-num">4</span>
+          <h2>How We Share Your Information</h2>
+        </div>
+        <p>We do not sell your personal information. We may share your information in the following limited circumstances:</p>
+        <ul>
+          <li><strong>Affiliated settlement providers:</strong> We may share your information with licensed life settlement brokers, providers, or investors to evaluate and process your inquiry.</li>
+          <li><strong>Service providers:</strong> We use third-party tools (such as CRM platforms, email providers, and analytics services) that may process your data on our behalf under confidentiality agreements.</li>
+          <li><strong>Legal compliance:</strong> We may disclose your information if required by law, regulation, court order, or to protect our legal rights.</li>
+          <li><strong>Business transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</li>
+        </ul>
+      </div>
+
+      <!-- 5 -->
+      <div class="pol-section" id="s5">
+        <div class="pol-section-head">
+          <span class="pol-num">5</span>
+          <h2>Cookies &amp; Tracking Technologies</h2>
+        </div>
+        <p>We use cookies and similar technologies to operate and improve our website. These may include:</p>
+        <ul>
+          <li><strong>Essential cookies:</strong> Required for the site to function properly</li>
+          <li><strong>Analytics cookies:</strong> Help us understand how visitors interact with the site (e.g., Google Analytics)</li>
+          <li><strong>Marketing cookies:</strong> Used to track the effectiveness of advertising campaigns</li>
+        </ul>
+        <p>You can control cookie settings through your browser preferences. Note that disabling certain cookies may affect site functionality. We may use third-party pixels or tracking tags from advertising platforms (such as Google or Meta) to measure campaign performance.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="pol-section" id="s6">
+        <div class="pol-section-head">
+          <span class="pol-num">6</span>
+          <h2>Data Retention</h2>
+        </div>
+        <p>We retain your personal information for as long as necessary to fulfill the purposes described in this policy, unless a longer retention period is required by law. If you request that we delete your information and we are not legally required to retain it, we will do so within a reasonable timeframe.</p>
+      </div>
+
+      <!-- 7 -->
+      <div class="pol-section" id="s7">
+        <div class="pol-section-head">
+          <span class="pol-num">7</span>
+          <h2>Security of Your Information</h2>
+        </div>
+        <p>We implement reasonable administrative, technical, and physical safeguards to protect your personal information from unauthorized access, disclosure, or misuse. However, no method of transmission over the internet is 100% secure. We encourage you to avoid sharing sensitive information (such as full Social Security numbers or financial account details) through our web forms.</p>
+      </div>
+
+      <!-- 8 -->
+      <div class="pol-section" id="s8">
+        <div class="pol-section-head">
+          <span class="pol-num">8</span>
+          <h2>Your Rights &amp; Choices</h2>
+        </div>
+        <p>Depending on your state of residence, you may have the following rights:</p>
+        <ul>
+          <li><strong>Access:</strong> Request a copy of the personal information we hold about you</li>
+          <li><strong>Correction:</strong> Request that we correct inaccurate information</li>
+          <li><strong>Deletion:</strong> Request that we delete your personal information, subject to legal obligations</li>
+          <li><strong>Opt-out:</strong> Opt out of marketing communications at any time by clicking "unsubscribe" in any email or contacting us directly</li>
+          <li><strong>Do Not Call:</strong> Request removal from our phone outreach list</li>
+        </ul>
+        <p>To exercise any of these rights, contact us using the information in Section 12. We will respond within 30 days.</p>
+        <div class="pol-callout">
+          <p><strong>California residents:</strong> You may have additional rights under the California Consumer Privacy Act (CCPA), including the right to know, delete, and opt out of the sale of personal information. We do not sell personal information as defined by the CCPA.</p>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="pol-section" id="s9">
+        <div class="pol-section-head">
+          <span class="pol-num">9</span>
+          <h2>Children's Privacy</h2>
+        </div>
+        <p>CancerFunding.net is not directed at individuals under the age of 18. We do not knowingly collect personal information from minors. If you believe a minor has submitted information to us, please contact us and we will promptly delete it.</p>
+      </div>
+
+      <!-- 10 -->
+      <div class="pol-section" id="s10">
+        <div class="pol-section-head">
+          <span class="pol-num">10</span>
+          <h2>Third-Party Links</h2>
+        </div>
+        <p>Our website may contain links to third-party websites. This Privacy Policy applies only to CancerFunding.net and does not govern the practices of any external sites. We encourage you to review the privacy policies of any third-party sites you visit.</p>
+      </div>
+
+      <!-- 11 -->
+      <div class="pol-section" id="s11">
+        <div class="pol-section-head">
+          <span class="pol-num">11</span>
+          <h2>Changes to This Policy</h2>
+        </div>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable law. When we do, we will revise the "Last Updated" date at the top of this page. We encourage you to review this policy periodically. Continued use of the site after changes are posted constitutes acceptance of the updated policy.</p>
+      </div>
+
+      <!-- 12 -->
+      <div class="pol-section" id="s12">
+        <div class="pol-section-head">
+          <span class="pol-num">12</span>
+          <h2>Contact Us</h2>
+        </div>
+        <p>If you have questions about this Privacy Policy or want to exercise your privacy rights, please reach out:</p>
+
+        <div class="contact-card">
+          <h3>Get in Touch</h3>
+          <p>We're here to help and will respond within one business day.</p>
+          <div class="contact-card-row">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+18005551234">1-800-555-1234</a>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:privacy@cancerfunding.net">privacy@cancerfunding.net</a>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <a href="https://www.cancerfunding.net">cancerfunding.net</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /policy-content -->
+  </div><!-- /policy-wrap -->
+</div>
+
+<!-- ================================================
+     FOOTER (exact match)
+================================================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="logo">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"/></svg>
+          </span>
+          <div class="logo-text"><b>cancer</b><span>funding</span></div>
+        </a>
+        <p>Proven financial support when it matters most. We help qualified individuals access the value of their life insurance—in days, not months.</p>
+        <div class="socials" aria-label="Social media">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.87v-6.99H7.9V12h2.5V9.8c0-2.47 1.47-3.83 3.72-3.83 1.08 0 2.21.19 2.21.19v2.43h-1.24c-1.22 0-1.6.76-1.6 1.54V12h2.72l-.44 2.88h-2.28v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.1-.9C17 3.5 12 3.5 12 3.5s-5 0-8 .3c-.4 0-1.3 0-2.1.9C1.2 5.4 1 7 1 7S.8 8.8.8 10.7v1.6C.8 14.2 1 16 1 16s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.1 7.6.3 7.6.3s5 0 8-.3c.4 0 1.3 0 2.1-.9.7-.7.9-2.3.9-2.3s.2-1.8.2-3.7v-1.6C23.2 8.8 23 7 23 7zM9.7 14.3V7.9l6.4 3.2-6.4 3.2z"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 6.8a4.8 4.8 0 0 1-3-1.1 4.8 4.8 0 0 1-1.8-3h-3.4v13.2a2.8 2.8 0 1 1-2-2.7v-3.5a6.3 6.3 0 1 0 5.4 6.2V9.4a8 8 0 0 0 4.8 1.6V7.6a4.8 4.8 0 0 1 0-.8z"/></svg></a>
+          <a href="#" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.3l-7.2 8.3 8.5 11.3h-6.7l-5.2-6.8-6 6.8H1l7.7-8.8L.7 3.3h6.9l4.7 6.2L17.5 3z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Library</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Glossary</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <div class="foot-contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+18005551234">1-800-555-1234</a>
+        </div>
+        <div class="foot-contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:hello@cancerfunding.net">hello@cancerfunding.net</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <div>© 2026 Cancer Funding. All rights reserved.</div>
+      <div class="foot-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Disclosures</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      This website provides general information and is not financial, medical, or legal advice. All transactions are subject to eligibility requirements and regulatory review. Availability and terms vary by state. Results shown are for illustration only.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
